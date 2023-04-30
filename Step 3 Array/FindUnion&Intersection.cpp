@@ -142,3 +142,44 @@ class Solution{
         
     }
 };
+
+
+// Intersection code 
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> intersection(int a[], int b[], int n, int m){
+    int i=0,j=0;
+    vector<int>res;
+    while(i<n && j<m){
+        if(a[i]<b[j]){
+            i++;
+        }
+        else if(a[i]>b[j]){
+            j++;
+        }
+        else{
+            if(res.size()==0 || res.back()!=a[i])
+                res.push_back(a[i]);
+            i++,j++;
+        }
+    }
+    return res;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for(auto &i:a)
+        cin>>i;
+    int n1;
+    cin >> n1;
+    vector<int> b(n1);
+    for(auto &i:b)
+        cin>>i;
+     vector<int> res=intersection(&a[0],&b[0],n,n1);
+     for(int i:res)
+         cout<<i<<" ";
+    return 0;
+}
