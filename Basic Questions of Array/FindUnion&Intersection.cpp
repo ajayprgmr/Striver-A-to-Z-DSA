@@ -44,8 +44,8 @@ vector<int> findUnion(int arr1[], int arr2[], int n, int m)
 
     return res;
 }
-/*
-This code wroks well for non repeated elements 
+
+// This code wroks well for non repeated elements 
 class Solution{
     public:
     //arr1,arr2 : the arrays
@@ -92,7 +92,6 @@ class Solution{
         
     }
 };
-*/
 
 // Following code is by striver this code handles all the cases properly 
 class Solution{

@@ -29,7 +29,7 @@ public:
     }
 };
 
-// one more solution for this this is also binary search only but lenthy code.
+// one more solution for the sorted array and find element that appears once. kind of binary search
 
 class Solution{
 public:	
