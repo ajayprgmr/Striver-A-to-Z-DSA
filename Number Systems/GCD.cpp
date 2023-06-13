@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-// } Driver Code Ends
 class Solution {
   public:
     vector<long long> lcmAndGcd(long long A , long long B) {
@@ -13,8 +11,8 @@ class Solution {
     }
     public:
      long long int gcd(int A, int B){
-         if(B==0)
-         return A;
+         if(A%B==0)
+         return B;
          else
          return gcd(B,A%B);
      }
