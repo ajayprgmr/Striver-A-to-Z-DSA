@@ -1,24 +1,31 @@
-class Solution
-{
-	public:
-	string is_palindrome(int n) {
-    int x = n;
-    int s,e;
-    int digits = log10(n) + 1; // count the number of digits in the number
-    
-    // Find the start and end indices of the digits to check
-   
-        int left=digits-1,right=0;
-    
-    // Check if the digits are the same from start and end
-    while (right<left) {
-        int left_digit=x/(int)pow(10,left)%10;
-        int right_digit=x/(int)pow(10,right)%10;
-        if(left_digit!=right_digit)
-        return "No";
-        left--;
-        right++;
+#include<bits/stdc++.h>
+using namespace std;
+// Mathematical approach , but it will work for <=10 digits max
+string is_palindrome(int n) {
+    int Nodig=floor(log10(abs(n)))+1;   // calculating number of digits in n using log formula
+    int temp = n; // making copy of n
+    int l= Nodig-1 , r= 0 ;
+    while(l>=r) {
+        int leftd = (temp/ int(pow(10,r)))%10;
+        int rightd= (temp/ int(pow(10,l))) %10;
+
+        if(leftd==rightd) {
+            l--, r++;
+        }
+        else {
+            return "No";
+        }
     }
-    
-    return "Yes";
-};
+}
+// using to_string function of STL C++
+string is_palindrome (int n) {
+    string s=to_string(n);
+    int l=0, r=s.size()-1;
+    while(l<=r) {
+        if(s[l]!=s[r]){
+            return "No";
+        }
+        l++, r--;
+    }
+    return "yes";
+}
