@@ -28,7 +28,6 @@ long long sumOfDivisors(long long N) {
  }
         if(N>1) {
             sum*=1+(1+N);
-        }
-        
+        } 
         return sum;
 }
