@@ -1,6 +1,8 @@
-// Bruteforce thinking but yeah still TC  is  big-oh of n only 
 #include<bits/stdc++.h>
 using namespace std;
+
+/* Bruteforce thinking but yeah still TC  is  big-oh of n only 
+   This is also a valid and good solution */
 void sort0s1s2s(vector<int>&nums){
     int zeros= 0;
     int ones= 0;
@@ -20,9 +22,13 @@ void sort0s1s2s(vector<int>&nums){
              else
              nums[i]=2;
     }
-
 }
-// Another approach using threee pointer in which we can do this in a single loop
+
+
+
+/*  Another approach using Dutch National flag algorithm uses three
+    pointers in which we can do this in a single loop
+    This is an optimal Solution with TC: O(n) and SC: O(1) */
 void sortArray(vector<int>& arr, int n) {
 
     int low = 0, mid = 0, high = n - 1; // 3 pointers

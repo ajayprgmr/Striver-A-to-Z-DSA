@@ -1,56 +1,13 @@
-//gfg
-// this will for both repeated and non-repeated as well codition is both should be in sorted order.
+
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> findUnion(int arr1[], int arr2[], int n, int m)
-{
-    vector<int> res;
-    int i = 0, j = 0;
-
-    while (i < n && j < m) {
-        if (arr1[i] < arr2[j]) {
-            if (i == 0 || arr1[i] != arr1[i - 1]) {
-                res.push_back(arr1[i]);
-            }
-            i++;
-        } else if (arr2[j] < arr1[i]) {
-            if (j == 0 || arr2[j] != arr2[j - 1]) {
-                res.push_back(arr2[j]);
-            }
-            j++;
-        } else {
-            if ((i == 0 || arr1[i] != arr1[i - 1])
-                && (j == 0 || arr2[j] != arr2[j - 1])) {
-                res.push_back(arr1[i]);
-            }
-            i++;
-            j++;
-        }
-    }
-
-    while (i < n) {
-        if (i == 0 || arr1[i] != arr1[i - 1]) {
-            res.push_back(arr1[i]);
-        }
-        i++;
-    }
-
-    while (j < m) {
-        if (j == 0 || arr2[j] != arr2[j - 1]) {
-            res.push_back(arr2[j]);
-        }
-        j++;
- }
-
-    return res;
-}
-
-// This code wroks well for non repeated elements 
 class Solution{
     public:
+    // Union
     //arr1,arr2 : the arrays
     // n, m: size of arrays
     //Function to return a list containing the union of the two arrays. 
+    // ofcourse both the arrays is sorted in increasing order.
     vector<int> findUnion(int arr1[], int arr2[], int n, int m)
     {
         vector<int>res;
@@ -93,17 +50,18 @@ class Solution{
     }
 };
 
-// Following code is by striver this code handles all the cases properly 
+/* More precise code.
+   arr1,arr2 two sorted arrays,of size m, n respectively
+   it might contain duplicate elements
+   we have to find the union of these two array.
+   TC: O(m+n)
+*/
 class Solution{
     public:
-    //arr1,arr2 : the arrays
-    // n, m: size of arrays
-    //Function to return a list containing the union of the two arrays. 
     vector<int> findUnion(int arr1[], int arr2[], int n, int m)
     {
         vector<int>res;
         int i=0,j=0;
-        
         while( i<n && j< m ) {
             
             if(arr1[i]<=arr2[j]){
@@ -142,11 +100,12 @@ class Solution{
     }
 };
 
-
-// Intersection code 
-#include<bits/stdc++.h>
-using namespace std;
-
+/*Intersection Code
+TC :O(m+n), SC: O(m+n)
+This code works for the all inputs repeated and non-repeated
+and this is the opimal Solution. and Important is Bothe the
+Array Should be Sorted.
+*/
 vector<int> intersection(int a[], int b[], int n, int m){
     int i=0,j=0;
     vector<int>res;
@@ -166,19 +125,4 @@ vector<int> intersection(int a[], int b[], int n, int m){
     return res;
 }
 
-int main() {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    for(auto &i:a)
-        cin>>i;
-    int n1;
-    cin >> n1;
-    vector<int> b(n1);
-    for(auto &i:b)
-        cin>>i;
-     vector<int> res=intersection(&a[0],&b[0],n,n1);
-     for(int i:res)
-         cout<<i<<" ";
-    return 0;
-}
+

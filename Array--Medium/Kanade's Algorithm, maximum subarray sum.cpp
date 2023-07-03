@@ -1,6 +1,9 @@
-/*Problem Statement: Given an integer array arr, find the contiguous subarray (containing at least one number) which
-has the largest sum and returns its sum and prints the subarray.*/
-// Brutforce using three loops its kind of generating all the substrings
+/* Problem Statement: Given an integer array arr, find the contiguous subarray 
+   which has the largest sum and returns its sum and prints the subarray. */
+
+
+/* Brutforce using three loops its kind of generating all the substrings
+   TC: O(N**3), SC : O(1)   */
 #include <bits/stdc++.h>
 using namespace std;
 int maxSubarraySum(int arr[], int n){
@@ -22,9 +25,9 @@ int maxSubarraySum(int arr[], int n){
     return best;
 }
 
-// Better approach be like big-oh of n square.
 
-
+/**Better approach be same as above just skipping one innner loop
+   TC: O(N**2), SC: O(1)     */
 int maxSubarraySum(int arr[], int n){
     int best=INT_MIN;  // initializing sum as min as possible
     for(int i=0; i<n; i++) {
@@ -37,9 +40,10 @@ int maxSubarraySum(int arr[], int n){
     return best;
 }
 
-// Now kanade's algorithm
 
 
+/* Most optimal Solution using  Kanade's Algorithm
+   TC: O(N), SC: O(1)   */
 int maxSubarraySum(int arr[], int n){
 
     int maxsum=INT_MIN,sum=0;

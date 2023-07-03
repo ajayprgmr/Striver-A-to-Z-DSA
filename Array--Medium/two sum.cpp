@@ -5,8 +5,9 @@ using namespace std;
 string TwoSum(vector<int> &nums, int target){
     int n=nums.size();
       for(int i=0; i<n ; i++ ) {
+             // starting from next to i because we want two sum 
+             //  not sum to itself.
              for(int j=i+1; j<n; j++){
-
                 if(nums[i]+ nums[j] == target)
                 return "YES";
              }
@@ -14,14 +15,12 @@ string TwoSum(vector<int> &nums, int target){
       return "NO";
 }
 
-
 // sort and use binary seach for each element it is also like bruteforce. (nlgon)
 string TwoSum(vector<int>& nums, int target) {
     sort(nums.begin(), nums.end());
     for (int i = 0; i < nums.size(); i++) {
         int complement = target - nums[i];
         int left = i + 1, right = nums.size() - 1;
-        
         while (left <= right) {
             int mid = (left + right) / 2;
             if (nums[mid] == complement) {
@@ -37,7 +36,7 @@ string TwoSum(vector<int>& nums, int target) {
     return "NO";
 }
 
-// better one (nlong)
+// better one (nlongn) : so called two pointer approach
 string TwoSum(vector<int>& nums, int target) {
     sort(nums.begin(), nums.end());
     int left = 0, right = nums.size() - 1;
@@ -82,6 +81,6 @@ pair<int,int> twoSum(vector<int> &arr, int target) {
         }
         mpp[num] = i;
     }
-   
+    
     return  {-1, -1};
 }

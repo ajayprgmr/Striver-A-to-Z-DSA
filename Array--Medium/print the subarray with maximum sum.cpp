@@ -26,17 +26,3 @@ vector<int> MaximumSubarray(vector<int> &nums) {
     }
     return ans;
 }
-
-int main() {
-    int n;
-    cin >> n;
-    vector<int> v(n);
-    for (auto &it : v)
-        cin >> it;
-
-    vector<int> res = MaximumSubarray(v);
-    for (int i : res)
-        cout << i << " ";
-
-    return 0;
-}

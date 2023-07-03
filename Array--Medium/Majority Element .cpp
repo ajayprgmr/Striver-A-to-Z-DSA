@@ -1,11 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
-// bruteforce solution
 
 
+// bruteforce solution TC : O(n**2), SC: O(1)
 int majorityElement(vector<int>&v) {
     int n=v.size();
-
     for(int i=0; i<n; i++){
         int cnt=0;
         for(int j=0; j<n; j++){
@@ -14,14 +13,13 @@ int majorityElement(vector<int>&v) {
             cnt++;
         }
 
-        if(cnt>n/2) return v[i];  // if found just  return check for each element of v
+        if(cnt>n/2) return v[i];  // if found just return 
     }
     return -1; // when no one elelment is found with occurence more than n/2
 }
 
 
-
-// Better
+// Better TC : O(N) ; SC : O(N)
 int majorityElement(vector<int>&v) {
     
     int n=v.size();
@@ -37,25 +35,24 @@ int majorityElement(vector<int>&v) {
    return -1;
 }
 
-// optimal more's voting algorithm
 
-#include <bits/stdc++.h>
-using namespace std;
 
+/* optimal solution using more's voting algorithm
+   TC : O(N) , SC: O(1)    */
 int majorityElement(vector<int> v) {
 
     //size of the given array:
     int n = v.size();
     int cnt = 0; // count
-    int el; // Element
+    int ele; // Element
 
     //applying the algorithm:
     for (int i = 0; i < n; i++) {
         if (cnt == 0) {
             cnt = 1;
-            el = v[i];
+            ele = v[i]; 
         }
-        else if (el == v[i]) cnt++;
+        else if (ele == v[i]) cnt++;
         else cnt--;
     }
 
@@ -63,9 +60,20 @@ int majorityElement(vector<int> v) {
     // is the majority element:
     int cnt1 = 0;
     for (int i = 0; i < n; i++) {
-        if (v[i] == el) cnt1++;
+        if (v[i] == ele) cnt1++;
     }
 
-    if (cnt1 > (n / 2)) return el;
+    if (cnt1 > (n / 2)) return ele;
     return -1;
 }
+
+/*
+https://leetcode.com/problems/majority-element/ : basic one for majority elements 
+frequency > n/2 .
+
+https://leetcode.com/problems/majority-element-ii/ : Good Question we have to return 
+all the elements whoose frequency is > florr(n/3) where n is the size of the array.
+
+https://practice.geeksforgeeks.org/problems/majority-element-1587115620/1
+
+*/

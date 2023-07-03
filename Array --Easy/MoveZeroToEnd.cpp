@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 //gfg
 void pushZerosToEnd(int arr[], int n) {
 	   int left = 0, right = 0;
@@ -16,20 +15,17 @@ void pushZerosToEnd(int arr[], int n) {
         }
 }
 
-
 //LeetCode
 //Method 1
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
        int count=0;
-       for(auto it=nums.begin();it!=nums.end();){
+       for(auto it=nums.begin();it!=nums.end(); ++it){
            if(*it==0){
-               it = nums.erase(it);
+               nums.erase(it);
                count++;
-           } else {
-               it++;
-           }
+           } 
        }
        nums.insert(nums.end(),count,0);
     }

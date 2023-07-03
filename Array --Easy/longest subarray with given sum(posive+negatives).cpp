@@ -37,13 +37,13 @@ int maxsubarrayposk(vector<int>&v, int k){
 
 }
 
-// optimal solution which is O(n) time complexity 
-// This solution will work for positives and negatives but array should not contain zeros.
-
+/*Optimal solution which is O(n) time complexity 
+But This solution will work for positives and negatives but array should not contain zeros.
+*/
 int maxsubarrayposk(vector<int>&v, int k){
     int best=0;
     map<int,int> presum;
-    int n=v.size();
+    int n=v.size(); 
     int sum=0;
 
     for(int i=0;i<n;i++){

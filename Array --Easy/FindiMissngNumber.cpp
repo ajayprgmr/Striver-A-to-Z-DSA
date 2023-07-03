@@ -9,19 +9,6 @@ int missingNumber(int A[], int N)
     sum+=A[i];
    return N*(N+1)/2 -sum;    
 }
-int main(){
-    int n;
-    cin>>n;
-    int i;
-    vector<int> x(n);
-    for(i=0;i<n-1;i++){
-        cin>>x[i];
-    }
-
-   cout<< missingNumber(x.data(),n);
-  return 0;  
-}
-
 
 //Leetcode
 class Solution {

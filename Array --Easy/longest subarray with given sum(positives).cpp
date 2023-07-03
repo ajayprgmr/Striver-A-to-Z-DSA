@@ -56,5 +56,4 @@ int maxsubarrayposk(vector<int>&v, int k){
         right++;
     }             
     return best;
-
 }

@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-// bruteforce nlogn solution
+/* bruteforce O(nlogn) solution but but the way this solution is presented
+it will wokr for all the cases */
 int print2largest(int arr[], int n) {
     sort(arr,arr+n);
     int largest=arr[n-1];
@@ -11,7 +12,8 @@ int print2largest(int arr[], int n) {
     return -1;
 }
 
-//better solution than above on it take two passes of bubblesort. O(2N)
+/*better solution than above on it takes  O(2N) but yeah this is also 
+a good solution becuase it does work for duplicates also. */
 int print2largest(int arr[], int n) {
      int largest=arr[0];
 
@@ -30,8 +32,14 @@ int print2largest(int arr[], int n) {
      return secondlargest;
      if(secondlargest==INT_MIN) return -1;
 }
+/* Better than solution using max heap it will take O(N)*/
+int print2largest(int arr[], int n) {
+    
+    priority_queue<int> pq;  // by default max heap
+    
+}
 
-// optimal solution is below
+/* Optimal solution is below this solution is valuable  */
 int print2largest(int arr[], int n) {
     int largest = arr[0];
     int second_largest = INT_MIN;
