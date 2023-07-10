@@ -23,7 +23,7 @@ int majorityElement(vector<int>&v) {
 int majorityElement(vector<int>&v) {
     
     int n=v.size();
-    map<int, int > hashmap;
+    unordered_map<int, int > hashmap;
     for(int i=0; i< v.size(); i++){
 
         hashmap[v[i]]++;
@@ -34,7 +34,6 @@ int majorityElement(vector<int>&v) {
     }
    return -1;
 }
-
 
 
 /* optimal solution using more's voting algorithm
