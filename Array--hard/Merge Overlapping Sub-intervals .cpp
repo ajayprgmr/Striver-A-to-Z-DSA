@@ -33,7 +33,7 @@ using namespace std;
 
 
 
-    //Optimal Solution TC: O(Nlogn) | SC : O(N)
+//Optimal Solution TC: O(Nlogn) | SC : O(N)
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         vector<vector<int>>ans;
         int n=intervals.size();
