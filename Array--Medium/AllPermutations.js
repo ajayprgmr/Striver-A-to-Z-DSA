@@ -1,5 +1,5 @@
 // Time Complexity: O(N!*N), Space Complexity: O(1)
-const function recAllPermutations(index, nums, res) {
+function recAllPermutations(index, nums, res) {
   // If index becomes equal to the size of nums, push the result and return.
   if (index === nums.length) {
     res.push([...nums])
@@ -20,5 +20,3 @@ const nums = [1, 2, 3]
 
 recAllPermutations(0, nums, result)
 console.log(result)
-
-
