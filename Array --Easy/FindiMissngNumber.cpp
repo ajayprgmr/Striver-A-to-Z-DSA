@@ -10,7 +10,7 @@ int missingNumber(int A[], int N)
    return N*(N+1)/2 -sum;    
 }
 
-//Leetcode
+//Leetcode 
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {

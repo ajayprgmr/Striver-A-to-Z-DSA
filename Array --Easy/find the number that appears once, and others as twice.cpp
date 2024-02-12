@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-//LeetCode  Liner TC
+//LeetCode  Linear TC
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
