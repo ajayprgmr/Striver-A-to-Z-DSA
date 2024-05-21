@@ -7,8 +7,10 @@ function armStrongNumber(n) {
   let res = 0
   while (n > 0) {
     let d = n % 10
-    res += d ** 3 // Using exponentiation operator
+    res += Math.pow(d, 3) // Using exponentiation operator
     n = Math.floor(n / 10) // Using integer division
   }
   return temp === res // Returning boolean result
 }
+
+console.log(armStrongNumber(153))
