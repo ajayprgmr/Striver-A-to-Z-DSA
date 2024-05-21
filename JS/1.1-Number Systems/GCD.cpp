@@ -1,19 +1,18 @@
-#include <bits/stdc++.h>
-using namespace std;
-class Solution {
-  public:
-    vector<long long> lcmAndGcd(long long A , long long B) {
-      long long  int g=gcd(A,B);
-      long long int l=(A*B)/g;
-      return {l,g};
-        
-    
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+
+function gcd(a, b) {
+    if (b === 0) {
+        return a;
+    } else {
+        return gcd(b, a % b);
     }
-    public:
-     long long int gcd(int A, int B){
-         if(A%B==0)
-         return B;
-         else
-         return gcd(B,A%B);
-     }
+}
+
+var findGCD = function(nums) {
+    let minEle = Math.min(...nums);
+    let maxEle = Math.max(...nums);
+    return gcd(minEle, maxEle);
 };
