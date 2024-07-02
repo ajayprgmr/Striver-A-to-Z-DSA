@@ -1,6 +1,7 @@
 /**
  * @param {number[]} nums
  * @return {number}
+ Leetcode : https://leetcode.com/problems/find-greatest-common-divisor-of-array/description/
  */
 
 function gcd(a, b) {
