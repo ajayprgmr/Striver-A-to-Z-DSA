@@ -33,7 +33,7 @@ function printConcentircPattern(n) {
   }
 
   for (let i = 0; i < size; i++) {
-    console.log(pattern[i].join('__|'))
+    console.log(pattern[i].join(' '))
   }
 }
 printConcentircPattern(4)
