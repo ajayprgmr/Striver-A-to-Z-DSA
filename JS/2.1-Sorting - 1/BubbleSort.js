@@ -1,4 +1,4 @@
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let arr = [-100, 2, 3, 400, 5, 6, 7, 8, 9]
 let start = performance.now()
 // Original Bubble Sort Algorithm
 function BubbleSort1(arr) {
